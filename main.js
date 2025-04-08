@@ -74,10 +74,21 @@ const setupEventListeners = () => {
         }
     });
 };
-
+function completeOrder(){
+    const modal = document.querySelector('.modal');
+    modal.classList.remove('hidden');
+}
 // Run
 const render = () => {
     container.innerHTML = getMenuItems();
     setupEventListeners();
+    document.getElementById('complete-order-btn').addEventListener('click', completeOrder);
+    document.querySelector('.modal').addEventListener('click', (e) => {
+        const modalContent = document.querySelector('.modal-content');
+        if (!modalContent.contains(e.target)) {
+            const modal = document.querySelector('.modal');
+            modal.classList.add('hidden'); // Hide the modal
+        }
+    });
 };
 render();
