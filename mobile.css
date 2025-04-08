@@ -1,0 +1,10 @@
+@media (max-width: 768px) {
+    body {
+      width: 100%;
+      margin: 0 auto;
+     
+    }
+    .modal-content {
+      width: 90%;
+    }
+  }

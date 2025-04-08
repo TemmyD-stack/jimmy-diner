@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Smythe", system-ui;
+    margin: 0;
+    /* border: 3px solid green; */
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    height: 100vh;
+   
+    /* justify-content: center; */
+    flex-direction: column;
+  
+}
+
+header{
+    background: url(./asset/burger.webp) no-repeat center left;
+    background-size: cover;
+    width: 100%;
+    padding: 50px  0px 50px 10px;
+    color: #f4f4f4;
+
+}
+.company-p{
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: 400;
+}
+/* MENU LISTING STARTS HERE */
+.menu-items{
+    /* border: 3px solid teal; */
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    padding:  10px 10px 25px 10px;
+    border-bottom: 1px solid #acacac;
+    
+}
+.menu-emoji{
+    font-size: 3rem;
+    margin-right: 10px;
+    opacity: .6;
+}
+.menu-ingredients{
+    font-size: 1rem;
+    margin: 10px 0;
+    font-weight: 400;
+    opacity: .6;
+}
+.menu-items .menu-btn button{
+    background: #fff;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.menu-btn{
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #dedede;
+  border-radius: 50%;
+}
+.menu-details{
+    width: 60%;
+}
+
+/* MODAL STARTS HERE */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    box-shadow: 2px 5px 2px #333;
+    z-index: 999;
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  .modal.show {
+    display: flex; 
+  }
+  
+  .modal form h2{
+    text-align: center;
+    margin: 10px 0 40px 0;
+   
+  }
+  .modal form input{
+    font-size: 1.2rem;
+    padding: 8px 5px;
+    width: 100%;
+    margin: 8px 0;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #333;
+  }
+  .modal .pay-el{
+    font-size: 1.2rem;
+    padding: 12px 0;
+    margin: 8px 0;
+    background: #16db99;
+    outline: none;
+    border: none;
+    color: #fff;
+    width: 100%;
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+/* RECIEPT STARTS HERE */
+.receipt-container{
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.receipt-container .hidden{
+  display: none;
+}
+.receipt-title{
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 20px 0;
+}
+.receipt-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+  
+}
+.receipt-main{
+  border: 2px solid yellow;
+  display: inline-flex;
+  gap: 10px;
+
+}
+
+.remove-btn{
+  font-family: 'Verdana', Geneva, Tahoma, sans-serif;
+  font-size: .7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background: #fff;
+  color: #333;
+  opacity: .6;
+  cursor: pointer;
+ 
+}
+.total-price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 2px solid #333;
+  padding: 10px 0 30px 0;
+}
+.receipt-container .pay-el{
+  font-size: 1.2rem;
+  padding: 12px 0;
+  margin: 8px 0;
+  background: #16db99;
+  outline: none;
+  border: none;
+  color: #fff;
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  cursor: pointer;
+}
