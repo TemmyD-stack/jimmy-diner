@@ -43,19 +43,34 @@
         <!-- Modal display -->
         <div class="modal hidden" id="modal">
             <div class="modal-content">
-                <form action="">
+                <form action="" id="payment-form">
                         <h2>Enter card details</h2>
                         <label for="name"></label>
-                        <input type="text" id="name" placeholder="Enter your name" required><br>
+                        <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
                         <label for="card-number"></label>
-                        <input type="text" id="card-number"  placeholder="Enter card number" required><br>
+                        <input 
+                        type="text" 
+                        id="card-number" 
+                        maxlength="16" 
+                        pattern="\d{16}" 
+                        inputmode="numeric"
+                        placeholder="Enter card number" 
+                        required><br>
                         <label for="cvv"></label>
-                        <input type="text" id="cvv"  placeholder="Enter CVV" required><br>
+                        <input 
+                        type="num" 
+                        id="cvv" 
+                        maxlength="3" 
+                        pattern="\d{3}" 
+                        inputmode="numeric" 
+                        placeholder="Enter CVV" 
+                        required><br>
                     
                         <button class="pay-el" id="pay-btn">Pay</button>
                 </form>
             </div>
         </div>
+        <div class="message"></div>
     </main>
     <script src="main.js" type="module"></script>
 </body>

@@ -3,7 +3,7 @@ import menuArray from './data.js';
 const container = document.querySelector('.menu-container');
 const receipt = document.getElementById('receipt');
 const receiptContainer = document.querySelector('.receipt-container .hidden');
-
+const payNow = document.getElementById('pay-btn')
 const totalPriceEl = document.getElementById('total-price');
 
 let total = 0;
@@ -25,14 +25,14 @@ const getMenuItems = () => {
     `).join('');
 };
 
-// Add to receipt using event delegation
+        // Add to receipt 
 const setupEventListeners = () => {
     container.addEventListener('click', (e) => {
         if (e.target.classList.contains('add-btn')) {
             const id = e.target.dataset.id;
             const item = menuArray.find(item => item.id == id);
 
-            // Update total and display
+            // Update total 
             total += item.price;
             totalPriceEl.textContent = `$${total}`;
 
@@ -78,17 +78,29 @@ function completeOrder(){
     const modal = document.querySelector('.modal');
     modal.classList.remove('hidden');
 }
-// Run
+payNow.addEventListener('click',(e) => {
+    e.preventDefault();
+    const form = document.querySelector('#payment-form');
+    const formData = new FormData(form);
+    const name = formData.get('name');
+
+    document.querySelector('.message').innerHTML = `Thanks ${name}! your order is on its way!`
+    document.querySelector('.message').style.display = 'block';
+    receiptContainer.classList.add('hidden');
+    modal.classList.add('hidden');
+})
+        // Run
 const render = () => {
     container.innerHTML = getMenuItems();
     setupEventListeners();
     document.getElementById('complete-order-btn').addEventListener('click', completeOrder);
     document.querySelector('.modal').addEventListener('click', (e) => {
-        const modalContent = document.querySelector('.modal-content');
+    const modalContent = document.querySelector('.modal-content');
         if (!modalContent.contains(e.target)) {
             const modal = document.querySelector('.modal');
             modal.classList.add('hidden'); // Hide the modal
         }
     });
+    
 };
 render();

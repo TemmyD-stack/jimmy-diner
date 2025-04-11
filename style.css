@@ -199,3 +199,13 @@ header{
   border-radius: 5px;
   cursor: pointer;
 }
+/* Message Starts here */
+.message{
+  display: none;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
+  background: #ECFDF5;
+  color: #065F46;
+  text-align: center;
+}
