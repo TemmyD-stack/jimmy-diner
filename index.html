@@ -51,7 +51,8 @@
                 <form action="" id="payment-form">
                         <h2>Enter card details</h2>
                         <label for="name"></label>
-                        <input type="text" name="name" id="name" placeholder="Enter your name" required><br>
+                        <input type="text" name="name" id="name" class="modal-input" placeholder="Enter your name" required><br>
+                        
                         <label for="card-number"></label>
                         <input 
                         type="text" 
@@ -59,8 +60,10 @@
                         maxlength="16" 
                         pattern="\d{16}" 
                         inputmode="numeric"
-                        placeholder="Enter card number" 
+                        placeholder="Enter card number"
+                        class="modal-input" 
                         required><br>
+                        
                         <label for="cvv"></label>
                         <input 
                         type="num" 
@@ -68,10 +71,11 @@
                         maxlength="3" 
                         pattern="\d{3}" 
                         inputmode="numeric" 
+                        class="modal-input" 
                         placeholder="Enter CVV" 
                         required><br>
                     
-                        <button class="pay-el" id="pay-btn">Pay</button>
+                        <button class="pay-el" id="pay-btn" disabled>Pay</button>
                 </form>
             </div>
         </div>

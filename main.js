@@ -5,7 +5,7 @@ const receipt = document.getElementById('receipt');
 const receiptContainer = document.querySelector('.receipt-container .hidden');
 const payNow = document.getElementById('pay-btn')
 const totalPriceEl = document.getElementById('total-price');
-
+const modalInputs = document.querySelectorAll('.modal-input');
 let total = 0;
 
 // Render menu
@@ -78,6 +78,15 @@ function completeOrder(){
     const modal = document.querySelector('.modal');
     modal.classList.remove('hidden');
 }
+// Handle modal inputs
+function validateModalInputs() {
+    const allFilled = [...modalInputs].every(input => input.value.trim() !== '');
+    payNow.disabled = !allFilled;
+}
+modalInputs.forEach(input => {
+    input.addEventListener('input', validateModalInputs);
+})
+
 payNow.addEventListener('click',(e) => {
     e.preventDefault();
     const form = document.querySelector('#payment-form');
@@ -89,6 +98,7 @@ payNow.addEventListener('click',(e) => {
     receiptContainer.classList.add('hidden');
     modal.classList.add('hidden');
 })
+
         // Run
 const render = () => {
     container.innerHTML = getMenuItems();
